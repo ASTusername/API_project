@@ -1,10 +1,7 @@
-# API-тестирование сайта [REQRES.IN](https://reqres.in/)
+# API-тестирование сайта [DEMOQA](https://demoqa.com/)
 
 <p align="center">  
-<img alt="Reqres.in" src="/media/screenshots/Reqresin.png">
-
-
-> Reqres моделирует реальные сценарии применения.
+<img alt="Reqres.in" src="/media/screenshots/Demoqa.png">
 
 <a name="наверх"></a>
 

@@ -17,7 +17,6 @@ public class ProfilePage {
             tableBody = $(".ReactTable");
     public ProfilePage openPage() {
         open(profileURI);
-    //    mainHeader.shouldHave(text("Profile"));
         return this;
     }
 
