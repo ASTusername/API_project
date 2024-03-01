@@ -1,7 +1,7 @@
 # API-тестирование сайта [DEMOQA](https://demoqa.com/)
 
 <p align="center">  
-<img alt="Reqres.in" src="/media/screenshots/Demoqa.png">
+<img alt="Demoqa" src="/media/screenshots/Demoqa.png">
 
 <a name="наверх"></a>
 
