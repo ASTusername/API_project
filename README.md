@@ -55,30 +55,36 @@ clean test
 ```
 ____
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="media/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/api-reqresh/)</a>
+## <img alt="Jenkins" height="25" src="media/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/AST_API_project/)</a>
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/api-reqresh/"><img src="media/screenshots/Jenkins.png" alt="Jenkins"/></a>  
+<a href="https://jenkins.autotests.cloud/job/AST_API_project"><img src="media/screenshots/JenkinsBuild.png" alt="Jenkins"/></a>  
 </p>
 
 <a id="allure"></a>
-## <img src="media/logo/Allure.svg" width="25" height="25"  alt="Allure"/></a> Allure <a target="_blank" href="https://jenkins.autotests.cloud/job/api-reqresh/allure/">отчёт</a>
+## <img src="media/logo/Allure.svg" width="25" height="25"  alt="Allure"/></a> Allure <a target="_blank" href="https://jenkins.autotests.cloud/job/AST_API_project/allure/">отчёт</a>
 
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="media/screenshots/AllureRep.png">  
+<img title="Allure Overview Dashboard" src="media/screenshots/AllureReport.png">  
 </p>  
+
+### *Suites*
+
+<p align="center">  
+<img title="Allure Overview Dashboard" src="media/screenshots/AllureSuites.png">  
+</p> 
 
 <a id="allure-testops"></a>
 ## <img src="media/logo/Allure_TO.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4026/launches">Allure TestOps</a>
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="media/screenshots/AllureTO.png">  
+<img title="Allure TestOps Dashboard" src="media/screenshots/AllureDash.png">  
 </p>  
 
 
 <a id="jira"></a>
-## <img src="media/logo/Jira.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1100">Jira</a>
+## <img src="media/logo/Jira.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1143">Jira</a>
 
 <p align="center">  
 <img title="Jira" src="media/screenshots/Jira.png">  
@@ -88,5 +94,5 @@ ____
 ## <img src="media/logo/Telegram.svg" width="25" height="25"  alt="Allure"/></a>Уведомление в Telegram
 
 <p align="center">  
-<img title="Telegram" src="media/screenshots/Tg.png">  
+<img title="Telegram" src="media/screenshots/TG.png">  
 </p>  
