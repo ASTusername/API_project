@@ -3,15 +3,16 @@ package api;
 import models.CredentialsModel;
 import models.LoginResponseModel;
 
+import static data.EndPoints.loginURI;
 import static data.UserData.PASSWORD;
 import static data.UserData.USERNAME;
-import static data.BaseURIs.loginURI;
-import static spec.Specifications.*;
 import static io.restassured.RestAssured.given;
+import static spec.Specifications.mainRequest;
+import static spec.Specifications.responseWithStatusCode;
 
 public class AuthorizationApi {
 
-    public static LoginResponseModel login(){
+    public static LoginResponseModel login() {
         CredentialsModel credentialsModel = new CredentialsModel();
         credentialsModel.setUserName(USERNAME);
         credentialsModel.setPassword(PASSWORD);
@@ -22,7 +23,8 @@ public class AuthorizationApi {
                         .when()
                         .post(loginURI)
                         .then()
-                        .spec(response200)
+                        .spec(responseWithStatusCode(200))
                         .extract().as(LoginResponseModel.class);
     }
+
 }

@@ -2,9 +2,11 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.BrowserDriverConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.restassured.RestAssured;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,12 +21,18 @@ public class TestBase {
 
     @BeforeAll
     static void setup() {
-        Configuration.browserSize = "1920x1080";
-        Configuration.browser = "chrome";
-        Configuration.baseUrl = "https://demoqa.com";
-        RestAssured.baseURI = "https://demoqa.com";
+        BrowserDriverConfig config = ConfigFactory.create(BrowserDriverConfig.class, System.getProperties());
+
+        Configuration.baseUrl = config.getBaseUrl();
+        RestAssured.baseURI = config.getBaseUrl();
+        Configuration.browser = config.getBrowserName();
+        Configuration.browserVersion = config.getBrowserVersion();
+        Configuration.browserSize = config.getBrowserSize();
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
+        if (config.getRemoteWebDriver() != null) {
+            Configuration.remote = config.getRemoteWebDriver();
+        }
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

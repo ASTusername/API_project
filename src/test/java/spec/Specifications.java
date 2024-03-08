@@ -16,16 +16,12 @@ public class Specifications {
             .log().headers()
             .log().body()
             .log().uri();
-    public static ResponseSpecification response200 = new ResponseSpecBuilder()
-            .expectStatusCode(200)
-            .log(ALL)
-            .build();
-    public static ResponseSpecification response201 = new ResponseSpecBuilder()
-            .expectStatusCode(201)
-            .log(ALL)
-            .build();
-    public static ResponseSpecification response204 = new ResponseSpecBuilder()
-            .expectStatusCode(204)
-            .log(ALL)
-            .build();
+
+    public static ResponseSpecification responseWithStatusCode(int status) {
+        ResponseSpecification response = new ResponseSpecBuilder()
+                .expectStatusCode(status)
+                .log(ALL)
+                .build();
+        return response;
+    }
 }

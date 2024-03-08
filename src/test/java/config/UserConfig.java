@@ -10,5 +10,7 @@ public interface UserConfig extends Config {
     String getUserName();
     @Key("password")
     String getPassword();
+    @Key("userId")
+    String getUserId();
 
 }
