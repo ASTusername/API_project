@@ -13,6 +13,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.Arrays;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -30,16 +31,16 @@ public class TestBase {
         Configuration.browserSize = config.getBrowserSize();
         Configuration.pageLoadStrategy = "eager";
 
-        if (config.getRemoteWebDriver() != null) {
-            Configuration.remote = config.getRemoteWebDriver();
+        if (config.isRemote()) {
+            Configuration.remote = String.valueOf(config.remoteUrl());
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                    "enableVNC", true,
+                    "enableVideo", true,
+                    "env", Arrays.asList("LANG=ru_RU.UTF-8", "LANGUAGE=ru:ru", "LC_ALL=ru_RU.UTF=8")
+            ));
+            Configuration.browserCapabilities = capabilities;
         }
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
 
     }
 
