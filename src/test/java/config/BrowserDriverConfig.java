@@ -2,7 +2,7 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:config/${env}.properties"})
+@Config.Sources({"classpath:${env}.properties"})
 public interface BrowserDriverConfig extends Config {
     @Key("browser")
     @DefaultValue("chrome")
