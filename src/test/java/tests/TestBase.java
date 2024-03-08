@@ -1,26 +1,28 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.BrowserDriverConfig;
+import config.WebConfig;
+import config.ConfigReader;
+import config.ProjectConfiguration;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import io.restassured.RestAssured;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.util.Arrays;
-import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
+    private static final WebConfig webConfig = ConfigReader.Instance.read();
 
     @BeforeAll
+    static void beforeAll() {
+        ProjectConfiguration projectConfiguration = new ProjectConfiguration(webConfig);
+        projectConfiguration.webConfig();
+    }
+
+    /*@BeforeAll
     static void setup() {
         BrowserDriverConfig config = ConfigFactory.create(BrowserDriverConfig.class, System.getProperties());
 
@@ -42,7 +44,7 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
         }
 
-    }
+    }*/
 
     @BeforeEach
     void addListener() {
