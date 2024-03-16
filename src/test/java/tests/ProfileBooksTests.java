@@ -21,7 +21,6 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("users_test")
-    @WithLogin
     void successUserLoginTest() {
 
         LoginResponseModel authResponse =
@@ -38,7 +37,6 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("users_test")
-    @WithLogin
     void errorWrongUserIdLoginTest() {
 
         LoginResponseModel authResponse =
@@ -54,7 +52,6 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("books_test")
-    @WithLogin
     void successUserAddBookTest() {
 
         BookCollectionResponse collection = BooksApi.requestBookCollection();
@@ -77,7 +74,6 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("books_test")
-    @WithLogin
     void errorWrongUserAddBookTest() {
         BookCollectionResponse collection = BooksApi.requestBookCollection();
 
@@ -98,7 +94,6 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("books_test")
-    @WithLogin
     void errorUserAddWrongBookTest1() {
 
         LoginResponseModel authResponse =
