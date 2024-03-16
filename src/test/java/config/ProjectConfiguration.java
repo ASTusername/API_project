@@ -1,6 +1,7 @@
 package config;
 
 import com.codeborne.selenide.Configuration;
+import io.restassured.RestAssured;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Arrays;
@@ -15,6 +16,7 @@ public class ProjectConfiguration {
 
     public void webConfig() {
         Configuration.baseUrl = webConfig.baseUrl();
+        RestAssured.baseURI = webConfig.baseUrl();
         Configuration.browser = webConfig.browser();
         Configuration.browserVersion = webConfig.browserVersion();
         Configuration.browserSize = webConfig.browserSize();
