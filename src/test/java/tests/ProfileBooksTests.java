@@ -21,7 +21,7 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("users_test")
- //   @WithLogin
+    @WithLogin
     void successUserLoginTest() {
 
         LoginResponseModel authResponse =
@@ -38,7 +38,7 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("users_test")
- //   @WithLogin
+    @WithLogin
     void errorWrongUserIdLoginTest() {
 
         LoginResponseModel authResponse =
@@ -54,7 +54,7 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("books_test")
-//    @WithLogin
+    @WithLogin
     void successUserAddBookTest() {
 
         BookCollectionResponse collection = BooksApi.requestBookCollection();
@@ -69,7 +69,7 @@ public class ProfileBooksTests extends TestBase {
         AddBookResponse addBookResponse = step("Добавление новой книги через API", () ->
                 BooksApi.addBook(collection.getBooks()[BOOK_NO].getIsbn(), authResponse.getToken(), authResponse.getUserId())
         );
-        step("Проверяем поля jndtnf", () -> {
+        step("Проверяем количество книг", () -> {
             assertEquals(1, addBookResponse.getBooks().size());
         });
     }
@@ -77,7 +77,7 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("books_test")
- //   @WithLogin
+    @WithLogin
     void errorWrongUserAddBookTest() {
         BookCollectionResponse collection = BooksApi.requestBookCollection();
 
@@ -98,7 +98,7 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("books_test")
- //   @WithLogin
+    @WithLogin
     void errorUserAddWrongBookTest1() {
 
         LoginResponseModel authResponse =
@@ -118,7 +118,7 @@ public class ProfileBooksTests extends TestBase {
 
     @Test
     @Tag("books_test")
-//    @WithLogin
+    @WithLogin
     void successDeleteBookFromProfileTest() {
 
         BookCollectionResponse collection = BooksApi.requestBookCollection();
