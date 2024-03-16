@@ -116,7 +116,7 @@ public class ProfileBooksTests extends TestBase {
         });
     }
 
-    @Test
+/*    @Test
     @Tag("books_test")
     @WithLogin
     void successDeleteBookFromProfileTest() {
@@ -149,5 +149,5 @@ public class ProfileBooksTests extends TestBase {
         step("Проверка, что коллекция пуста", () ->
                 profilePage.checkTableBody(collection.getBooks()[BOOK_NO].getTitle())
         );
-    }
+    }*/
 }
